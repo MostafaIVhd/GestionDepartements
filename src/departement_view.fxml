@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.DepartementController"
+            prefWidth="600" prefHeight="500">
+    <children>
+        <VBox spacing="14" layoutX="20" layoutY="20" prefWidth="560" styleClass="panel-card departement-panel">
+            <Label text="Gestion des Départements" styleClass="panel-title"/>
+            <TableView fx:id="tableDepartement" prefHeight="260">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colNom" text="Nom" prefWidth="150"/>
+                    <TableColumn fx:id="colDescription" text="Description" prefWidth="200"/>
+                    <TableColumn fx:id="colIdChef" text="ID Chef" prefWidth="80"/>
+                </columns>
+            </TableView>
+            <GridPane hgap="10" vgap="10" style="-fx-background-color: #e3f2fd; -fx-padding: 12; -fx-border-color: #90caf9; -fx-border-radius: 6; -fx-background-radius: 6;">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="160"/>
+                    <ColumnConstraints prefWidth="360"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                </rowConstraints>
+                <Label text="Nom:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNom" promptText="Nom" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Description:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtDescription" promptText="Description" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="ID Chef:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtIdChef" promptText="ID Chef" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+            <HBox spacing="10" style="-fx-padding: 6 0 0 0;">
+                <Button onAction="#handleAjouter" styleClass="btn-add">
+                    <graphic><Label text="➕"/></graphic>
+                    <text>Add</text>
+                </Button>
+                <Button onAction="#handleModifier" styleClass="btn-edit">
+                    <graphic><Label text="✎"/></graphic>
+                    <text>Edit</text>
+                </Button>
+                <Button onAction="#handleSupprimer" styleClass="btn-delete">
+                    <graphic><Label text="🗑️"/></graphic>
+                    <text>Delete</text>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

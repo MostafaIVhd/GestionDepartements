@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ProjetController"
+            prefWidth="600" prefHeight="400">
+    <children>
+        <VBox spacing="14" layoutX="20" layoutY="20" prefWidth="560" styleClass="panel-card projet-panel">
+            <Label text="Gestion des Projets" styleClass="panel-title"/>
+            <TableView fx:id="tableProjet" prefHeight="220">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colNom" text="Nom" prefWidth="150"/>
+                    <TableColumn fx:id="colDescription" text="Description" prefWidth="200"/>
+                    <TableColumn fx:id="colBudget" text="Budget" prefWidth="100"/>
+                    <TableColumn fx:id="colIdEmploye" text="Responsable" prefWidth="80"/>
+                </columns>
+            </TableView>
+            <GridPane hgap="10" vgap="10" style="-fx-background-color: #e3f2fd; -fx-padding: 12; -fx-border-color: #90caf9; -fx-border-radius: 6; -fx-background-radius: 6;">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="160"/>
+                    <ColumnConstraints prefWidth="360"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                    <RowConstraints prefHeight="30"/>
+                </rowConstraints>
+                <Label text="ID:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label fx:id="lblId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Nom:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="lblNom" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Description:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label fx:id="lblDescription" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Budget:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label fx:id="lblBudget" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Label text="Responsable:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Label fx:id="lblIdEmploye" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+            <HBox spacing="10" style="-fx-padding: 6 0 0 0;">
+                <Button onAction="#handleAjouter" fx:id="btnAjouter" styleClass="btn-add">
+                    <graphic><Label text="➕"/></graphic>
+                    <text>Add</text>
+                </Button>
+                <Button onAction="#handleModifier" fx:id="btnModifier" styleClass="btn-edit">
+                    <graphic><Label text="✎"/></graphic>
+                    <text>Edit</text>
+                </Button>
+                <Button onAction="#handleSupprimer" fx:id="btnSupprimer" styleClass="btn-delete">
+                    <graphic><Label text="🗑️"/></graphic>
+                    <text>Delete</text>
+                </Button>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button onAction="#handleActualiser" styleClass="btn-action">
+                    <graphic><Label text="⟳"/></graphic>
+                    <text>Refresh</text>
+                </Button>
+                <Button onAction="#handleFermer" styleClass="btn-delete">
+                    <graphic><Label text="✖"/></graphic>
+                    <text>Close</text>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

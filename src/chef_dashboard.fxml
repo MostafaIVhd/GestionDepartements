@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ChefDashboardController"
+            prefWidth="800" prefHeight="520">
+    <!-- stylesheets removed from FXML; added programmatically to the Scene to avoid FXMLLoader type issues -->
+    <children>
+        <VBox spacing="16" layoutX="20" layoutY="20" prefWidth="760">
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="topbar">
+                <Label fx:id="lblWelcome" text="Espace Chef de Département" styleClass="topbar-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnMenu" onAction="#showMenu" styleClass="menu-button">
+                    <graphic>
+                        <Label text="☰" style="-fx-font-size:16; -fx-text-fill: -fx-text-inner-color;" />
+                    </graphic>
+                </Button>
+                <Button text="Se déconnecter" onAction="#handleLogout" styleClass="logout-btn"/>
+            </HBox>
+
+            <!-- flexible spacer to push stats to bottom -->
+            <Region VBox.vgrow="ALWAYS" />
+
+            <!-- Stats panel (chef) placed at bottom -->
+            <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding:8 0 0 0;">
+                <Label text="Budgets (dept):" style="-fx-font-weight:bold;"/>
+                <Label fx:id="lblDeptBudgets" text="-"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Salaire moyen (dept):" style="-fx-font-weight:bold;"/>
+                <Label fx:id="lblDeptAvgSalary" text="-"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Employés (dept):" style="-fx-font-weight:bold;"/>
+                <Label fx:id="lblDeptEmployees" text="-"/>
+            </HBox>
+
+            <GridPane hgap="12" vgap="10" styleClass="info-grid">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="35"/>
+                    <ColumnConstraints percentWidth="65"/>
+                </columnConstraints>
+
+                <Label text="IdUtilisateur:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblIdUtilisateur" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblEmailValue" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Password:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblPasswordValue" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="IdEmploye:" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblIdEmployeValue" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Nom:" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblNomValue" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                
+                <Label text="Prénom:" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblPrenomValue" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Poste:" GridPane.rowIndex="6" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblPosteValue" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                <Label text="Salaire:" GridPane.rowIndex="7" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblSalaireValue" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label text="IdDepartement:" GridPane.rowIndex="8" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblIdDepartementValue" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                <Label text="Tâche:" GridPane.rowIndex="9" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblTacheValue" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+                <Label text="Demande:" GridPane.rowIndex="10" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblDemandeValue" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+                <Label text="IdChef:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+                <Label fx:id="lblIdChefValue" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+                <Label text="DateNomination:" GridPane.rowIndex="12" GridPane.columnIndex="0" styleClass="heading"/>
+                <Label fx:id="lblDateNominationValue" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            
+        </VBox>
+    </children>
+</AnchorPane>
